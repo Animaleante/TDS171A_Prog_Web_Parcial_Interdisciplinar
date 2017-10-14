@@ -76,7 +76,7 @@ public class IngredienteView {
 			System.out.println("Lista de ingredientes:");
 			
 			for (int i = 0; i < list.size(); i++) {
-				System.out.println("Ingrediente: " + list.get(i).getNome());
+				System.out.println("Ingrediente #"+list.get(i).getId()+": " + list.get(i).getNome());
 			}
 			
 			System.out.println("");
@@ -84,12 +84,30 @@ public class IngredienteView {
 	}
 
 	private void atualizar() {
-		// TODO Auto-generated method stub
+		int id = -1;
+		String nome = "";
 		
+		id = Leitor.readInt("Digite o id do ingrediente a ser modificado: ");
+		nome = Leitor.readString("Digite o novo nome do ingrediente: ");
+		
+		Ingrediente ingrediente = new Ingrediente(id, nome);
+		
+		System.out.println("Atualizando...");
+		if(controller.atualizar(ingrediente))
+			System.out.println("Ingrediente atualizado com sucesso!");
+		else 
+			System.out.println("Não foi possivel atualizar esse ingrediente.");
 	}
 
 	private void remover() {
-		// TODO Auto-generated method stub
-		
+		int id = -1;
+
+		id = Leitor.readInt("Digite o id do ingrediente a ser removido: ");
+
+		System.out.println("Removendo...");
+		if(controller.remover(id))
+			System.out.println("Ingrediente removido com sucesso!");
+		else 
+			System.out.println("Não foi possivel remover esse ingrediente.");
 	}
 }

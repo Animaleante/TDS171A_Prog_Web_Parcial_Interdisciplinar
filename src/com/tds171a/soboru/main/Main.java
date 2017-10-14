@@ -19,6 +19,8 @@ public class Main {
 			Class.forName("oracle.jdbc.driver.OracleDriver");
 		} catch (ClassNotFoundException e) {
 			e.printStackTrace();
+			
+			return;
 		}
 		
 		new MainView();

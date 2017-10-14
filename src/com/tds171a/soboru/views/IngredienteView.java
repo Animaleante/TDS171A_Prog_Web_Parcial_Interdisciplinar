@@ -35,6 +35,12 @@ public class IngredienteView {
 			case 2:
 				listar();
 				break;
+			case 3:
+				atualizar();
+				break;
+			case 4:
+				remover();
+				break;
 			case 9:
 				break;
 			default:
@@ -75,5 +81,15 @@ public class IngredienteView {
 			
 			System.out.println("");
 		}
+	}
+
+	private void atualizar() {
+		// TODO Auto-generated method stub
+		
+	}
+
+	private void remover() {
+		// TODO Auto-generated method stub
+		
 	}
 }

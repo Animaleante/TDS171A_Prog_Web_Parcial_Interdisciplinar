@@ -7,12 +7,27 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 
+import com.tds171a.soboru.models.IDAO;
 import com.tds171a.soboru.utils.Utils;
 import com.tds171a.soboru.vos.Medida;
 
-public class MedidaDAO implements IMedidaDAO {
-	private String tableName = "medidas";
+/**
+ * Classe de DAO da Medida
+ * @author Diogo
+ *
+ */
+public class MedidaDAO implements IDAO<Medida> {
 	
+	/**
+	 * Parâmetro com nome da tabela referente a esse DAO
+	 */
+	private String tableName = "medidas";
+
+	/**
+	 * Método para incluir uma nova Medida
+	 * @param ingrediente
+	 * @return
+	 */
 	@Override
 	public boolean incluir(Medida medida) {
 		Connection connection = null;
@@ -21,7 +36,7 @@ public class MedidaDAO implements IMedidaDAO {
 
 			PreparedStatement sttm = connection.prepareStatement("insert into "+tableName+" values(medidas_seq.NEXTVAL, ?,?)");
 			sttm.setString(1, medida.getNome());
-			sttm.setString(2, medida.getAbreveacao());
+			sttm.setString(2, medida.getAbreviacao());
 
 			int rowsAffected = sttm.executeUpdate();
 			
@@ -45,6 +60,10 @@ public class MedidaDAO implements IMedidaDAO {
 		return false;
 	}
 
+	/**
+	 * Método para trazer uma lista de todos as Medidaa
+	 * @return
+	 */
 	@Override
 	public List<Medida> listar() {
 		Connection connection = null;
@@ -86,6 +105,11 @@ public class MedidaDAO implements IMedidaDAO {
 		return null;
 	}
 
+	/**
+	 * Método para atualizar uma Medida já registrado
+	 * @param ingrediente
+	 * @return
+	 */
 	@Override
 	public boolean atualizar(Medida	medida) {
 		Connection connection = null;
@@ -94,7 +118,7 @@ public class MedidaDAO implements IMedidaDAO {
 			
 			PreparedStatement sttm = connection.prepareStatement("update "+tableName+" set nome = ?, abreveacao = ? where id = ?");
 			sttm.setString(1, medida.getNome());
-			sttm.setString(2, medida.getAbreveacao());
+			sttm.setString(2, medida.getAbreviacao());
 			sttm.setInt(3, medida.getId());
 
 			int rowsAffected = sttm.executeUpdate();
@@ -119,6 +143,11 @@ public class MedidaDAO implements IMedidaDAO {
 		return false;
 	}
 
+	/**
+	 * Método para remover uma Medida
+	 * @param ingredienteId
+	 * @return
+	 */
 	@Override
 	public boolean remover(int medidaId) {
 		Connection connection = null;

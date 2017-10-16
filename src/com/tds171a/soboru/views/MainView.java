@@ -2,12 +2,25 @@ package com.tds171a.soboru.views;
 
 import com.tds171a.soboru.utils.Leitor;
 
+/**
+ * Classe de view do Menu Principal
+ * @author Diogo
+ *
+ */
 public class MainView {
+	
+	/**
+	 * Construtor da view de Ingrediente
+	 */
 	public MainView() {
 		while (menu() != 9) {
 		}
 	}
-
+	
+	/**
+	 * Método de escrita do menu para Ingrediente
+	 * @return
+	 */
 	private int menu() {
 		System.out.println(" --- Menu ---");
 

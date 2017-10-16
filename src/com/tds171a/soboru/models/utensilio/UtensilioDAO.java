@@ -7,12 +7,27 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 
+import com.tds171a.soboru.models.IDAO;
 import com.tds171a.soboru.utils.Utils;
 import com.tds171a.soboru.vos.Utensilio;
 
-public class UtensilioDAO implements IUtensilioDAO {
+/**
+ * Classe de DAO do Utensilio
+ * @author Diogo
+ *
+ */
+public class UtensilioDAO implements IDAO<Utensilio> {
+
+	/**
+	 * Parâmetro com nome da tabela referente a esse DAO
+	 */
 	private String tableName = "utensilios";
-	
+
+	/**
+	 * Método para incluir um novo Utensilio
+	 * @param ingrediente
+	 * @return
+	 */
 	@Override
 	public boolean incluir(Utensilio utensilio) {
 		Connection connection = null;
@@ -44,6 +59,10 @@ public class UtensilioDAO implements IUtensilioDAO {
 		return false;
 	}
 
+	/**
+	 * Método para trazer uma lista de todos os Utensilios
+	 * @return
+	 */
 	@Override
 	public List<Utensilio> listar() {
 		Connection connection = null;
@@ -84,6 +103,11 @@ public class UtensilioDAO implements IUtensilioDAO {
 		return null;
 	}
 
+	/**
+	 * Método para atualizar um Utensilio já registrado
+	 * @param ingrediente
+	 * @return
+	 */
 	@Override
 	public boolean atualizar(Utensilio utensilio) {
 		Connection connection = null;
@@ -116,6 +140,11 @@ public class UtensilioDAO implements IUtensilioDAO {
 		return false;
 	}
 
+	/**
+	 * Método para remover um Utensilio
+	 * @param ingredienteId
+	 * @return
+	 */
 	@Override
 	public boolean remover(int utensilioId) {
 		Connection connection = null;

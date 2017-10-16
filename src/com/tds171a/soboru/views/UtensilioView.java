@@ -6,9 +6,21 @@ import com.tds171a.soboru.controllers.UtensilioController;
 import com.tds171a.soboru.utils.Leitor;
 import com.tds171a.soboru.vos.Utensilio;
 
+/**
+ * Classe de view do Utensilio
+ * @author Diogo
+ *
+ */
 public class UtensilioView {
+	
+	/**
+	 * Parâmetro de controller do Utensilio
+	 */
 	private UtensilioController controller;
 	
+	/**
+	 * Construtor da view de Utensilio
+	 */
 	public UtensilioView() {
 		controller = new UtensilioController();
 		
@@ -16,6 +28,10 @@ public class UtensilioView {
 		}
 	}
 
+	/**
+	 * Método de escrita do menu para Utensilio
+	 * @return
+	 */
 	private int menu() {
 		System.out.println(" --- Menu ---");
 
@@ -51,6 +67,9 @@ public class UtensilioView {
 		return op;
 	}
 
+	/**
+	 * Método para incluir um novo Utensilio
+	 */
 	private void incluir() {
 		String nome = "";
 		
@@ -65,6 +84,9 @@ public class UtensilioView {
 			System.out.println("Não foi possivel inserir esse utensilio.");
 	}
 
+	/**
+	 * Método para listar os Utensilios
+	 */
 	private void listar() {
 		List<Utensilio> list = controller.listar();
 		
@@ -83,6 +105,9 @@ public class UtensilioView {
 		}
 	}
 
+	/**
+	 * Método para atualizar um Utensilio já cadastrada
+	 */
 	private void atualizar() {
 		int id = -1;
 		String nome = "";
@@ -99,6 +124,9 @@ public class UtensilioView {
 			System.out.println("Não foi possivel atualizar esse utensilio.");
 	}
 
+	/**
+	 * Método para remover um Utensilio
+	 */
 	private void remover() {
 		int id = -1;
 

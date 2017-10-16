@@ -6,16 +6,32 @@ import com.tds171a.soboru.controllers.IngredienteController;
 import com.tds171a.soboru.utils.Leitor;
 import com.tds171a.soboru.vos.Ingrediente;
 
+/**
+ * Classe de view do Ingrediente 
+ * @author Diogo
+ *
+ */
 public class IngredienteView {
+	
+	/**
+	 * Parâmetro de controller do Ingrediente
+	 */
 	private IngredienteController controller;
 	
+	/**
+	 * Construtor da view de Ingrediente
+	 */
 	public IngredienteView() {
 		controller = new IngredienteController();
 		
 		while (menu() != 9) {
 		}
 	}
-
+	
+	/**
+	 * Método de escrita do menu para Ingrediente
+	 * @return
+	 */
 	private int menu() {
 		System.out.println(" --- Menu ---");
 
@@ -50,7 +66,10 @@ public class IngredienteView {
 
 		return op;
 	}
-
+	
+	/**
+	 * Método para incluir um novo Ingrediente
+	 */
 	private void incluir() {
 		String nome = "";
 		
@@ -64,7 +83,10 @@ public class IngredienteView {
 		else 
 			System.out.println("Não foi possivel inserir esse ingrediente.");
 	}
-
+	
+	/**
+	 * Método para listar os Ingredientes
+	 */
 	private void listar() {
 		List<Ingrediente> list = controller.listar();
 		
@@ -82,7 +104,10 @@ public class IngredienteView {
 			System.out.println("");
 		}
 	}
-
+	
+	/**
+	 * Método para atualizar um Ingrediente já cadastrado
+	 */
 	private void atualizar() {
 		int id = -1;
 		String nome = "";
@@ -98,7 +123,10 @@ public class IngredienteView {
 		else 
 			System.out.println("Não foi possivel atualizar esse ingrediente.");
 	}
-
+	
+	/**
+	 * Método para remover um Ingrediente
+	 */
 	private void remover() {
 		int id = -1;
 

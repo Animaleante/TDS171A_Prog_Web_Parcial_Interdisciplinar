@@ -6,16 +6,32 @@ import com.tds171a.soboru.controllers.MedidaController;
 import com.tds171a.soboru.utils.Leitor;
 import com.tds171a.soboru.vos.Medida;
 
+/**
+ * Classe de view das Medidas 
+ * @author Diogo
+ *
+ */
 public class MedidaView {
+	
+	/**
+	 * Parâmetro de controller do Medida
+	 */
 	private MedidaController controller;
-
+	
+	/**
+	 * Construtor da view de Medidas
+	 */
 	public MedidaView() {
 		controller = new MedidaController();
 
 		while (menu() != 9) {
 		}
 	}
-
+	
+	/**
+	 * Método de escrita do menu para Medida
+	 * @return
+	 */
 	private int menu() {
 		System.out.println(" --- Menu ---");
 
@@ -51,6 +67,9 @@ public class MedidaView {
 		return op;
 	}
 
+	/**
+	 * Método para incluir uma nova Medida
+	 */
 	private void incluir() {
 		String nome = "";
 		String abreveacao = "";
@@ -67,6 +86,9 @@ public class MedidaView {
 			System.out.println("Não foi possivel inserir essa medida.");
 	}
 
+	/**
+	 * Método para listar as Medidas
+	 */
 	private void listar() {
 		List<Medida> list = controller.listar();
 
@@ -78,13 +100,16 @@ public class MedidaView {
 			System.out.println("Lista de medidas:");
 
 			for (int i = 0; i < list.size(); i++) {
-				System.out.println("Medida #" + list.get(i).getId() + ": " + list.get(i).getNome()+", abreveação: " + list.get(i).getAbreveacao());
+				System.out.println("Medida #" + list.get(i).getId() + ": " + list.get(i).getNome()+", abreveação: " + list.get(i).getAbreviacao());
 			}
 
 			System.out.println("");
 		}
 	}
 
+	/**
+	 * Método para atualizar uma Medida já cadastrada
+	 */
 	private void atualizar() {
 		int id = -1;
 		String nome = "";
@@ -103,6 +128,9 @@ public class MedidaView {
 			System.out.println("Não foi possivel atualizar essa medida.");
 	}
 
+	/**
+	 * Método para remover uma Medida
+	 */
 	private void remover() {
 		int id = -1;
 

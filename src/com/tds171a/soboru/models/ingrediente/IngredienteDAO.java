@@ -7,12 +7,27 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 
+import com.tds171a.soboru.models.IDAO;
 import com.tds171a.soboru.utils.Utils;
 import com.tds171a.soboru.vos.Ingrediente;
 
-public class IngredienteDAO implements IIngredienteDAO {
-	private String tableName = "ingredientes";
+/**
+ * Classe de DAO do Ingrediente
+ * @author Diogo
+ *
+ */
+public class IngredienteDAO implements IDAO<Ingrediente> {
 	
+	/**
+	 * Parâmetro com nome da tabela referente a esse DAO
+	 */
+	private String tableName = "ingredientes";
+
+	/**
+	 * Método para incluir um novo Ingrediente
+	 * @param ingrediente
+	 * @return
+	 */
 	@Override
 	public boolean incluir(Ingrediente ingrediente) {
 		Connection connection = null;
@@ -44,6 +59,10 @@ public class IngredienteDAO implements IIngredienteDAO {
 		return false;
 	}
 
+	/**
+	 * Método para trazer uma lista de todos os Ingredientes
+	 * @return
+	 */
 	@Override
 	public List<Ingrediente> listar() {
 		Connection connection = null;
@@ -83,7 +102,12 @@ public class IngredienteDAO implements IIngredienteDAO {
 
 		return null;
 	}
-
+	
+	/**
+	 * Método para atualizar um Ingrediente já registrado
+	 * @param ingrediente
+	 * @return
+	 */
 	@Override
 	public boolean atualizar(Ingrediente ingrediente) {
 		Connection connection = null;
@@ -116,6 +140,11 @@ public class IngredienteDAO implements IIngredienteDAO {
 		return false;
 	}
 
+	/**
+	 * Método para remover um Ingrediente
+	 * @param ingredienteId
+	 * @return
+	 */
 	@Override
 	public boolean remover(int ingredienteId) {
 		Connection connection = null;

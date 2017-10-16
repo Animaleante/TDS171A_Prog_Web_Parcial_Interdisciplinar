@@ -12,6 +12,7 @@ import com.tds171a.soboru.views.MainView;
 public class Main {
 
 	/**
+	 * Ponto de entrada da aplicação
 	 * @param args
 	 */
 	public static void main(String[] args) {

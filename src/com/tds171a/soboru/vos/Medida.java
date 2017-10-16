@@ -1,59 +1,90 @@
 package com.tds171a.soboru.vos;
 
+/**
+ * Classe de ValueObject da Medida
+ * @author Diogo
+ *
+ */
 public class Medida {
-	private int id;
-	private String nome;
-	private String abreveacao;
 	
+	/**
+	 * Parâmetro id da Medida
+	 */
+	private int id;
+	
+	/**
+	 * Parâmetro nome da Medida
+	 */
+	private String nome;
+	
+	/**
+	 * Parâmetro abreviacao da Medida
+	 */
+	private String abreviacao;
+	
+	/**
+	 * Construtor da classe de Medida
+	 */
 	public Medida() {}
 	
-	public Medida(String nome, String abreveacao) {
+	/**
+	 * Construtor da classe de Medida que recebe o nome e a abreviacao
+	 * @param nome
+	 * @param abreviacao
+	 */
+	public Medida(String nome, String abreviacao) {
 		this.nome = nome;
-		this.abreveacao = abreveacao;
-	}
-	
-	public Medida(int id, String nome, String abreveacao) {
-		this.id = id;
-		this.nome = nome;
-		this.abreveacao = abreveacao;
+		this.abreviacao = abreviacao;
 	}
 	
 	/**
-	 * @return the id
+	 * Construtor da classe de Medida que recebe o id, nome e abreviacao
+	 * @param id
+	 * @param nome
+	 * @param abreviacao
+	 */
+	public Medida(int id, String nome, String abreviacao) {
+		this.id = id;
+		this.nome = nome;
+		this.abreviacao = abreviacao;
+	}
+	
+	/**
+	 * @return o id
 	 */
 	public int getId() {
 		return id;
 	}
 	/**
-	 * @param id the id to set
+	 * @param id o id para setar
 	 */
 	public void setId(int id) {
 		this.id = id;
 	}
 	/**
-	 * @return the nome
+	 * @return o nome
 	 */
 	public String getNome() {
 		return nome;
 	}
 	/**
-	 * @param nome the nome to set
+	 * @param nome o nome para setar
 	 */
 	public void setNome(String nome) {
 		this.nome = nome;
 	}
 
 	/**
-	 * @return the abreveacao
+	 * @return o abreviacao
 	 */
-	public String getAbreveacao() {
-		return abreveacao;
+	public String getAbreviacao() {
+		return abreviacao;
 	}
 
 	/**
-	 * @param abreveacao the abreveacao to set
+	 * @param abreviacao a abreviacao para setar
 	 */
-	public void setAbreveacao(String abreveacao) {
-		this.abreveacao = abreveacao;
+	public void setAbreviacao(String abreviacao) {
+		this.abreviacao = abreviacao;
 	}
 }

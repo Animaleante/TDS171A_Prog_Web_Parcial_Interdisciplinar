@@ -17,7 +17,7 @@ CREATE SEQUENCE utensilios_seq;
 CREATE TABLE medidas(
 	id number not null,
 	nome varchar2(80) not null,
-	abreveacao varchar2(10) not null;
+	abreveacao varchar2(10) not null,
 	CONSTRAINT medidas_id_pk PRIMARY KEY (id)
 );
 
